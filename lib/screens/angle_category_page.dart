@@ -70,8 +70,6 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
                         fontWeight: FontWeight.w300,
                       ),
                       keyboardType: TextInputType.number,
-                      //initialValue: "0.0",
-
                       decoration: const InputDecoration(
                         hintText: "0.0",
                         hintStyle: TextStyle(

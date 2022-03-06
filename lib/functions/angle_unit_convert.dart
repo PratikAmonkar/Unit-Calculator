@@ -6,18 +6,8 @@ angleUnitConverte(firstIntialDropDownValue, secondIntialDropDownValue,
       secondIntialDropDownValue == "radians") {
     return (double.parse(firstTextControllerValue.text) * pi / 180)
         .toStringAsFixed(3);
-    // setState(
-    //   () {
-    //     secondTextControllerValue.text = ans.toString();
-    //   },
-    // );
   } else {
     return (double.parse(firstTextControllerValue.text) * 180 / pi)
         .toStringAsFixed(2);
-    // setState(
-    //   () {
-    //     secondTextControllerValue.text = ans.toString();
-    //   },
-    // );
   }
 }
