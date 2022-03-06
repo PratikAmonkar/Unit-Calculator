@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:unit_converter/model/category_model.dart';
+import 'package:unit_converter/screens/angle_category_page.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({Key? key}) : super(key: key);
@@ -14,7 +15,6 @@ class _CategoryPageState extends State<CategoryPage> {
     CategoryImage(
       "images/angle.png",
       "Angle",
-      "AngleCategory",
     ),
   ];
 
@@ -49,7 +49,13 @@ class _CategoryPageState extends State<CategoryPage> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-             
+              if (index == 0) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const AngleCategoryPage(),
+                  ),
+                );
+              }
             },
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -72,10 +78,8 @@ class _CategoryPageState extends State<CategoryPage> {
               ),
             ),
           );
-        
         },
       ),
-   
     );
   }
 }
