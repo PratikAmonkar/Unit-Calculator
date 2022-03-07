@@ -4,6 +4,7 @@ import 'package:unit_converter/model/category_model.dart';
 import 'package:unit_converter/screens/angle_category_page.dart';
 import 'package:unit_converter/screens/area_category_page.dart';
 import 'package:unit_converter/screens/mass_category_page.dart';
+import 'package:unit_converter/screens/temperature_category_page.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({Key? key}) : super(key: key);
@@ -25,6 +26,10 @@ class _CategoryPageState extends State<CategoryPage> {
     CategoryImage(
       "images/mass.png",
       "Mass",
+    ),
+    CategoryImage(
+      "images/temperature.png",
+      "Temperature",
     ),
   ];
 
@@ -75,6 +80,12 @@ class _CategoryPageState extends State<CategoryPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const MassCategoryPage(),
+                  ),
+                );
+              } else if (index == 3) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const TemperatureCategoryPage(),
                   ),
                 );
               }
