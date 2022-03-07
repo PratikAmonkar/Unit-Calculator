@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:unit_converter/model/category_model.dart';
 import 'package:unit_converter/screens/angle_category_page.dart';
 import 'package:unit_converter/screens/area_category_page.dart';
+import 'package:unit_converter/screens/mass_category_page.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({Key? key}) : super(key: key);
@@ -17,9 +18,13 @@ class _CategoryPageState extends State<CategoryPage> {
       "images/angle.png",
       "Angle",
     ),
-     CategoryImage(
+    CategoryImage(
       "images/area.png",
       "Area",
+    ),
+    CategoryImage(
+      "images/mass.png",
+      "Mass",
     ),
   ];
 
@@ -60,10 +65,16 @@ class _CategoryPageState extends State<CategoryPage> {
                     builder: (context) => const AngleCategoryPage(),
                   ),
                 );
-              }else if(index == 1){
-                 Navigator.of(context).push(
+              } else if (index == 1) {
+                Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const AreaCategoryPage(),
+                  ),
+                );
+              } else if (index == 2) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const MassCategoryPage(),
                   ),
                 );
               }
