@@ -3,9 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:unit_converter/model/category_model.dart';
 import 'package:unit_converter/screens/angle_category_page.dart';
 import 'package:unit_converter/screens/area_category_page.dart';
+import 'package:unit_converter/screens/data_category_page.dart';
 import 'package:unit_converter/screens/length_category_page.dart';
 import 'package:unit_converter/screens/mass_category_page.dart';
 import 'package:unit_converter/screens/temperature_category_page.dart';
+import 'package:unit_converter/screens/time_category_page.dart';
 import 'package:unit_converter/screens/volume_category_page.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -37,9 +39,17 @@ class _CategoryPageState extends State<CategoryPage> {
       "images/length.png",
       "Length",
     ),
-        CategoryImage(
+    CategoryImage(
       "images/volume.png",
       "Volume",
+    ),
+    CategoryImage(
+      "images/data.png",
+      "Data",
+    ),
+    CategoryImage(
+      "images/time.png",
+      "Time",
     ),
   ];
 
@@ -104,11 +114,22 @@ class _CategoryPageState extends State<CategoryPage> {
                     builder: (context) => const LengthCategoryPage(),
                   ),
                 );
-              }
-              else if (index == 5) {
+              } else if (index == 5) {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const VolumeCategoryPage(),
+                  ),
+                );
+              } else if (index == 6) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const DataCategoryPage(),
+                  ),
+                );
+              } else if (index == 7) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const TimeCategoryPage(),
                   ),
                 );
               }
