@@ -69,7 +69,7 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
                     child: TextFormField(
                       controller: firstTextControllerValue,
                       style: const TextStyle(
-                        fontSize: 30,
+                        fontSize: 20,
                         fontWeight: FontWeight.w300,
                         color: Colors.purple,
                       ),
@@ -145,7 +145,7 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
                     child: TextFormField(
                       controller: secondTextControllerValue,
                       style: const TextStyle(
-                        fontSize: 30,
+                        fontSize: 25,
                         fontWeight: FontWeight.w300,
                           color: Colors.purple,
                       ),                //initialValue: "0.0",
