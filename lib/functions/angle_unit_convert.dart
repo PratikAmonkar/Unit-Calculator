@@ -4,10 +4,12 @@ angleUnitConverte(firstIntialDropDownValue, secondIntialDropDownValue,
 
   if (firstIntialDropDownValue == "degree" &&
       secondIntialDropDownValue == "radians") {
-    return (double.parse(firstTextControllerValue.text) * pi / 180)
+    var finalAns = (double.parse(firstTextControllerValue.text) * pi / 180)
         .toStringAsFixed(3);
+    return finalAns + " " + "rad";
   } else {
-    return (double.parse(firstTextControllerValue.text) * 180 / pi)
+    var finalAns = (double.parse(firstTextControllerValue.text) * 180 / pi)
         .toStringAsFixed(2);
+    return finalAns + " " + "deg";
   }
 }

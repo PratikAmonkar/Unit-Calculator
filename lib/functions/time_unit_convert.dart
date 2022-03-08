@@ -2,39 +2,42 @@ timeUnitConverte(firstIntialDropDownValue, secondIntialDropDownValue,
     firstTextControllerValue, secondTextControllerValue) {
   if (firstIntialDropDownValue == "second" &&
       secondIntialDropDownValue == "minute") {
-    var ans1 = (double.parse(firstTextControllerValue.text) / 60)
+    var finalOutputOne = (double.parse(firstTextControllerValue.text) / 60)
         .toStringAsFixed(2)
         .split('.')[0];
 
-    var ans2 = (double.parse(firstTextControllerValue.text) / 60)
+    var finalOutputTwo = (double.parse(firstTextControllerValue.text) / 60)
         .toStringAsFixed(2)
         .split('.')[1];
-    String demo = ans1 + " " + "min" + " " + ans2 + " " + "sec";
+    String demo =
+        finalOutputOne + " " + "min" + " " + finalOutputTwo + " " + "sec";
     return demo;
   } else if (firstIntialDropDownValue == "second" &&
       secondIntialDropDownValue == "hour") {
-    var ans1 = (double.parse(firstTextControllerValue.text) / 3600)
+    var finalOutputOne = (double.parse(firstTextControllerValue.text) / 3600)
         .toStringAsFixed(2)
         .split('.')[0];
 
-    var ans2 = (double.parse(firstTextControllerValue.text) / 3600)
+    var finalOutputTwo = (double.parse(firstTextControllerValue.text) / 3600)
         .toStringAsFixed(2)
         .split('.')[1];
-    String demo = ans1 + " " + "hr" + " " + ans2 + " " + "sec";
+    String demo =
+        finalOutputOne + " " + "hr" + " " + finalOutputTwo + " " + "sec";
     return demo;
   } else if (firstIntialDropDownValue == "minute" &&
       secondIntialDropDownValue == "second") {
     return (int.parse(firstTextControllerValue.text) * 60).toString();
   } else if (firstIntialDropDownValue == "minute" &&
       secondIntialDropDownValue == "hour") {
-    var ans1 = (double.parse(firstTextControllerValue.text) / 60)
+    var finalOutputOne = (double.parse(firstTextControllerValue.text) / 60)
         .toStringAsFixed(2)
         .split('.')[0];
 
-    var ans2 = (double.parse(firstTextControllerValue.text) / 60)
+    var finalOutputTwo = (double.parse(firstTextControllerValue.text) / 60)
         .toStringAsFixed(2)
         .split('.')[1];
-    String demo = ans1 + " " + "hr" + " " + ans2 + " " + "min";
+    String demo =
+        finalOutputOne + " " + "hr" + " " + finalOutputTwo + " " + "min";
     return demo;
   } else if (firstIntialDropDownValue == "hour" &&
       secondIntialDropDownValue == "second") {
