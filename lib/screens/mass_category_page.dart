@@ -55,6 +55,7 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
                 style: TextStyle(
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold,
+                  color: Colors.purple,
                 ),
               ),
             ),
@@ -70,6 +71,7 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
                       style: const TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w300,
+                        color: Colors.purple,
                       ),
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
@@ -77,7 +79,7 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
                         hintStyle: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w300,
-                          color: Colors.black,
+                          color: Colors.purple,
                         ),
                       ),
                     ),
@@ -89,7 +91,12 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
                       (String items) {
                         return DropdownMenuItem(
                           value: items,
-                          child: Text(items),
+                          child: Text(
+                            items,
+                            style: const TextStyle(
+                              color: Colors.purple,
+                            ),
+                          ),
                         );
                       },
                     ).toList(),
@@ -112,14 +119,8 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Icon(
-                    Icons.arrow_upward,
-                    size: 35.5,
-                  ),
-                  Icon(
-                    Icons.arrow_downward,
-                    size: 35.5,
-                  ),
+                  Icon(Icons.arrow_upward, size: 35.5, color: Colors.purple),
+                  Icon(Icons.arrow_downward, size: 35.5, color: Colors.purple),
                 ],
               ),
             ),
@@ -139,6 +140,7 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
                       style: const TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w300,
+                        color: Colors.purple,
                       ),
                       //initialValue: "0.0",
                       keyboardType: TextInputType.number,
@@ -147,7 +149,7 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
                         hintStyle: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w300,
-                          color: Colors.black,
+                          color: Colors.purple,
                         ),
                       ),
                     ),
@@ -159,7 +161,12 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
                       (String items) {
                         return DropdownMenuItem(
                           value: items,
-                          child: Text(items),
+                          child: Text(
+                            items,
+                            style: const TextStyle(
+                              color: Colors.purple,
+                            ),
+                          ),
                         );
                       },
                     ).toList(),

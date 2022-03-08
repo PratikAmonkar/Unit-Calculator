@@ -57,6 +57,7 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                 style: TextStyle(
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold,
+                  color: Colors.purple,
                 ),
               ),
             ),
@@ -70,16 +71,16 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                     child: TextFormField(
                       controller: firstTextControllerValue,
                       style: const TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w300,
-                      ),
+                          fontSize: 30,
+                          fontWeight: FontWeight.w300,
+                          color: Colors.purple),
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         hintText: "0.0",
                         hintStyle: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w300,
-                          color: Colors.black,
+                          color: Colors.purple,
                         ),
                       ),
                     ),
@@ -91,7 +92,12 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                       (String items) {
                         return DropdownMenuItem(
                           value: items,
-                          child: Text(items),
+                          child: Text(
+                            items,
+                            style: const TextStyle(
+                              color: Colors.purple,
+                            ),
+                          ),
                         );
                       },
                     ).toList(),
@@ -117,10 +123,12 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                   Icon(
                     Icons.arrow_upward,
                     size: 35.5,
+                    color: Colors.purple,
                   ),
                   Icon(
                     Icons.arrow_downward,
                     size: 35.5,
+                    color: Colors.purple,
                   ),
                 ],
               ),
@@ -141,6 +149,7 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                       style: const TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w300,
+                        color: Colors.purple,
                       ),
                       //initialValue: "0.0",
                       keyboardType: TextInputType.number,
@@ -149,7 +158,7 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                         hintStyle: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w300,
-                          color: Colors.black,
+                          color: Colors.purple,
                         ),
                       ),
                     ),
@@ -161,7 +170,12 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                       (String items) {
                         return DropdownMenuItem(
                           value: items,
-                          child: Text(items),
+                          child: Text(
+                            items,
+                            style: const TextStyle(
+                              color: Colors.purple,
+                            ),
+                          ),
                         );
                       },
                     ).toList(),

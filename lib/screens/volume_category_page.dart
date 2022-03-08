@@ -53,6 +53,7 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
                 style: TextStyle(
                   fontSize: 26.0,
                   fontWeight: FontWeight.bold,
+                  color: Colors.purple,
                 ),
               ),
             ),
@@ -68,6 +69,7 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
                       style: const TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w300,
+                        color: Colors.purple,
                       ),
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
@@ -75,7 +77,7 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
                         hintStyle: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w300,
-                          color: Colors.black,
+                          color: Colors.purple,
                         ),
                       ),
                     ),
@@ -87,7 +89,12 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
                       (String items) {
                         return DropdownMenuItem(
                           value: items,
-                          child: Text(items),
+                          child: Text(
+                            items,
+                            style: const TextStyle(
+                              color: Colors.purple,
+                            ),
+                          ),
                         );
                       },
                     ).toList(),
@@ -137,6 +144,7 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
                       style: const TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w300,
+                        color: Colors.purple,
                       ),
                       //initialValue: "0.0",
                       keyboardType: TextInputType.number,
@@ -145,7 +153,7 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
                         hintStyle: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w300,
-                          color: Colors.black,
+                          color: Colors.purple,
                         ),
                       ),
                     ),
@@ -157,7 +165,12 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
                       (String items) {
                         return DropdownMenuItem(
                           value: items,
-                          child: Text(items),
+                          child: Text(
+                            items,
+                            style: const TextStyle(
+                              color: Colors.purple,
+                            ),
+                          ),
                         );
                       },
                     ).toList(),
