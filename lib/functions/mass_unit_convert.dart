@@ -2,24 +2,33 @@ massUnitConverte(firstIntialDropDownValue, secondIntialDropDownValue,
     firstTextControllerValue, secondTextControllerValue) {
   if (firstIntialDropDownValue == "grams" &&
       secondIntialDropDownValue == "kilograms") {
-    return (double.parse(firstTextControllerValue.text) / 1000)
-        .toStringAsFixed(3);
-  } else if (firstIntialDropDownValue == "kilograms" &&
-      secondIntialDropDownValue == "grams") {
-    return (double.parse(firstTextControllerValue.text) * 1000)
-        .toStringAsFixed(2);
+    var finalOutput =
+        (double.parse(firstTextControllerValue.text) / 1000).toStringAsFixed(3);
+    return finalOutput + " " + "kg";
   } else if (firstIntialDropDownValue == "grams" &&
       secondIntialDropDownValue == "carats") {
-    return (double.parse(firstTextControllerValue.text) * 5).toStringAsFixed(2);
-  } else if (firstIntialDropDownValue == "carats" &&
+    var finalOutput =
+        (double.parse(firstTextControllerValue.text) * 5).toStringAsFixed(2);
+    return finalOutput + " " + "ct";
+  } else if (firstIntialDropDownValue == "kilograms" &&
       secondIntialDropDownValue == "grams") {
-    return (double.parse(firstTextControllerValue.text) / 5).toStringAsFixed(2);
+    var finalOutput =
+        (double.parse(firstTextControllerValue.text) * 1000).toStringAsFixed(2);
+    return finalOutput + " " + "g";
   } else if (firstIntialDropDownValue == "kilograms" &&
       secondIntialDropDownValue == "carats") {
-    return (double.parse(firstTextControllerValue.text) * 5000)
-        .toStringAsFixed(2);
-  } else {
-    return (double.parse(firstTextControllerValue.text) / 5000)
+    var finalOutput =
+        (double.parse(firstTextControllerValue.text) * 5000).toStringAsFixed(2);
+    return finalOutput + " " + "ct";
+  } else if (firstIntialDropDownValue == "carats" &&
+      secondIntialDropDownValue == "grams") {
+    var finalOutput =
+        (double.parse(firstTextControllerValue.text) / 5).toStringAsFixed(2);
+    return finalOutput + " " + "g";
+  } else if (firstIntialDropDownValue == "carats" &&
+      secondIntialDropDownValue == "kilograms") {
+    var finalOutput = (double.parse(firstTextControllerValue.text) * 0.0002)
         .toStringAsFixed(6);
+    return finalOutput + " " + "kg";
   }
 }
