@@ -73,14 +73,14 @@ class _AngleCategoryPageState extends State<LengthCategoryPage> {
                     child: TextFormField(
                       controller: firstTextControllerValue,
                       style: const TextStyle(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.w300,
                           color: Colors.purple),
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         hintText: "0.0",
                         hintStyle: TextStyle(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.w300,
                           color: Colors.purple,
                         ),
@@ -115,7 +115,7 @@ class _AngleCategoryPageState extends State<LengthCategoryPage> {
               ),
             ),
             const SizedBox(
-              height: 20.0,
+              height: 50.0,
             ),
             Padding(
               padding: const EdgeInsets.only(top: 50.0),
@@ -146,10 +146,9 @@ class _AngleCategoryPageState extends State<LengthCategoryPage> {
                   SizedBox(
                     width: 200.0,
                     child: TextFormField(
-                      enabled: false,
                       controller: secondTextControllerValue,
                       style: const TextStyle(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.w300,
                           color: Colors.purple),
                       //initialValue: "0.0",
@@ -157,7 +156,7 @@ class _AngleCategoryPageState extends State<LengthCategoryPage> {
                       decoration: const InputDecoration(
                         hintText: "0.0",
                         hintStyle: TextStyle(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.w300,
                           color: Colors.purple,
                         ),
@@ -192,7 +191,7 @@ class _AngleCategoryPageState extends State<LengthCategoryPage> {
               ),
             ),
             const SizedBox(
-              height: 50.0,
+              height: 100.0,
             ),
             ElevatedButton(
               onPressed: () {
