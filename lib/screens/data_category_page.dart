@@ -147,7 +147,7 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                       enabled: false,
                       controller: secondTextControllerValue,
                       style: const TextStyle(
-                        fontSize: 30,
+                        fontSize: 25,
                         fontWeight: FontWeight.w300,
                         color: Colors.purple,
                       ),
@@ -156,7 +156,7 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                       decoration: const InputDecoration(
                         hintText: "0.0",
                         hintStyle: TextStyle(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.w300,
                           color: Colors.purple,
                         ),
