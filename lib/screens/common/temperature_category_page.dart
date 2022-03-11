@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:unit_converter/functions/data_unit_convert.dart';
+import 'package:unit_converter/functions/temperature_nuit_convert.dart';
 import 'package:unit_converter/widgets/alertbox_widget.dart';
 
-class DataCategoryPage extends StatefulWidget {
-  const DataCategoryPage({Key? key}) : super(key: key);
+class TemperatureCategoryPage extends StatefulWidget {
+  const TemperatureCategoryPage({Key? key}) : super(key: key);
 
   @override
-  State<DataCategoryPage> createState() => _DataCategoryPageState();
+  State<TemperatureCategoryPage> createState() => _AngleCategoryPageState();
 }
 
-class _DataCategoryPageState extends State<DataCategoryPage> {
-  String firstIntialDropDownValue = 'byte';
-  String secondIntialDropDownValue = 'kilobyte';
+class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
+  String firstIntialDropDownValue = 'celsius';
+  String secondIntialDropDownValue = 'fahrenheit';
 
   final firstDropDownValue = [
-    "byte",
-    "kilobyte",
-    "megabyte",
-    "gigabyte",
+    "celsius",
+    "fahrenheit",
+    "kelvin",
   ];
 
   final secondDropDownValue = [
-    "byte",
-    "kilobyte",
-    "megabyte",
-    "gigabyte",
+    "celsius",
+    "fahrenheit",
+    "kelvin",
   ];
 
   final firstTextControllerValue = TextEditingController();
@@ -53,9 +51,9 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                 bottom: 30,
               ),
               child: Text(
-                "Data Unit Converter",
+                "Temperature Unit Converter",
                 style: TextStyle(
-                  fontSize: 30.0,
+                  fontSize: 27.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.purple,
                 ),
@@ -71,9 +69,10 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                     child: TextFormField(
                       controller: firstTextControllerValue,
                       style: const TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.purple),
+                        fontSize: 25,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.purple,
+                      ),
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         hintText: "0.0",
@@ -123,18 +122,16 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                   Icon(
                     Icons.arrow_upward,
                     size: 35.5,
-                    color: Colors.purple,
                   ),
                   Icon(
                     Icons.arrow_downward,
                     size: 35.5,
-                    color: Colors.purple,
                   ),
                 ],
               ),
             ),
             const SizedBox(
-              height: 50.0,
+              height: 20.0,
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
@@ -144,14 +141,12 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
                   SizedBox(
                     width: 200.0,
                     child: TextFormField(
-                      enabled: false,
                       controller: secondTextControllerValue,
                       style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w300,
                         color: Colors.purple,
                       ),
-                      //initialValue: "0.0",
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         hintText: "0.0",
@@ -239,7 +234,7 @@ class _DataCategoryPageState extends State<DataCategoryPage> {
     } else {
       setState(
         () {
-          secondTextControllerValue.text = dataUnitConverte(
+          secondTextControllerValue.text = temperatureUnitConverte(
             firstIntialDropDownValue,
             secondIntialDropDownValue,
             firstTextControllerValue,

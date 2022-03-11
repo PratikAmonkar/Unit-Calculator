@@ -147,7 +147,6 @@ class _AngleCategoryPageState extends State<AreaCategoryPage> {
                         fontWeight: FontWeight.w300,
                         color: Colors.purple,
                       ),
-                      //initialValue: "0.0",
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         hintText: "0.0",

@@ -1,27 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:unit_converter/functions/angle_unit_convert.dart';
+import 'package:unit_converter/functions/data_unit_convert.dart';
 import 'package:unit_converter/widgets/alertbox_widget.dart';
 
-class AngleCategoryPage extends StatefulWidget {
-  const AngleCategoryPage({Key? key}) : super(key: key);
+class DataCategoryPage extends StatefulWidget {
+  const DataCategoryPage({Key? key}) : super(key: key);
 
   @override
-  State<AngleCategoryPage> createState() => _AngleCategoryPageState();
+  State<DataCategoryPage> createState() => _DataCategoryPageState();
 }
 
-class _AngleCategoryPageState extends State<AngleCategoryPage> {
-  String firstIntialDropDownValue = 'degree';
-  String secondIntialDropDownValue = 'radians';
+class _DataCategoryPageState extends State<DataCategoryPage> {
+  String firstIntialDropDownValue = 'byte';
+  String secondIntialDropDownValue = 'kilobyte';
 
   final firstDropDownValue = [
-    "degree",
-    "radians",
+    "byte",
+    "kilobyte",
+    "megabyte",
+    "gigabyte",
   ];
 
   final secondDropDownValue = [
-    "degree",
-    "radians",
+    "byte",
+    "kilobyte",
+    "megabyte",
+    "gigabyte",
   ];
 
   final firstTextControllerValue = TextEditingController();
@@ -49,7 +53,7 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
                 bottom: 30,
               ),
               child: Text(
-                "Angle Unit Converter",
+                "Data Unit Converter",
                 style: TextStyle(
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold,
@@ -141,18 +145,18 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
                   SizedBox(
                     width: 200.0,
                     child: TextFormField(
+                      enabled: false,
                       controller: secondTextControllerValue,
                       style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w300,
                         color: Colors.purple,
                       ),
-                      //initialValue: "0.0",
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         hintText: "0.0",
                         hintStyle: TextStyle(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.w300,
                           color: Colors.purple,
                         ),
@@ -235,7 +239,7 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
     } else {
       setState(
         () {
-          secondTextControllerValue.text = angleUnitConverte(
+          secondTextControllerValue.text = dataUnitConverte(
             firstIntialDropDownValue,
             secondIntialDropDownValue,
             firstTextControllerValue,

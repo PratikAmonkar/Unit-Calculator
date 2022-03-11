@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unit_converter/screens/category_page.dart';
+import 'package:unit_converter/utils/device_selection.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
       ),
       debugShowCheckedModeBanner: false,
-      home: const CategoryPage(),
+      home: const DeviceSelection(),
     );
   }
 }

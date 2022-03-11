@@ -1,29 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:unit_converter/functions/time_unit_convert.dart';
+import 'package:unit_converter/functions/volume_unit_converter.dart';
 import 'package:unit_converter/widgets/alertbox_widget.dart';
 
-class TimeCategoryPage extends StatefulWidget {
-  const TimeCategoryPage({Key? key}) : super(key: key);
+class VolumeCategoryPage extends StatefulWidget {
+  const VolumeCategoryPage({Key? key}) : super(key: key);
 
   @override
-  State<TimeCategoryPage> createState() => _AngleCategoryPageState();
+  State<VolumeCategoryPage> createState() => _AngleCategoryPageState();
 }
 
-class _AngleCategoryPageState extends State<TimeCategoryPage> {
-  String firstIntialDropDownValue = 'second';
-  String secondIntialDropDownValue = 'minute';
+class _AngleCategoryPageState extends State<VolumeCategoryPage> {
+  String firstIntialDropDownValue = 'liters';
+  String secondIntialDropDownValue = 'milliliters';
 
   final firstDropDownValue = [
-    "second",
-    "minute",
-    "hour",
+    "liters",
+    "milliliters",
   ];
 
   final secondDropDownValue = [
-    "second",
-    "minute",
-    "hour",
+    "liters",
+    "milliliters",
   ];
 
   final firstTextControllerValue = TextEditingController();
@@ -51,11 +49,11 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
                 bottom: 30,
               ),
               child: Text(
-                "Time Unit Converter",
+                "Volume Unit Converter",
                 style: TextStyle(
-                  color: Colors.purple,
-                  fontSize: 27.0,
+                  fontSize: 26.0,
                   fontWeight: FontWeight.bold,
+                  color: Colors.purple,
                 ),
               ),
             ),
@@ -75,7 +73,7 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
                       ),
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
-                        hintText: "0",
+                        hintText: "0.0",
                         hintStyle: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w300,
@@ -115,19 +113,19 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
               height: 50.0,
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 50.0),
+              padding: const EdgeInsets.only(
+                top: 50.0,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   Icon(
                     Icons.arrow_upward,
                     size: 35.5,
-                    color: Colors.purple,
                   ),
                   Icon(
                     Icons.arrow_downward,
                     size: 35.5,
-                    color: Colors.purple,
                   ),
                 ],
               ),
@@ -143,17 +141,18 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
                   SizedBox(
                     width: 200.0,
                     child: TextFormField(
+                      enabled: false,
                       controller: secondTextControllerValue,
                       style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w300,
-                          color: Colors.purple,
-                      ),                //initialValue: "0.0",
+                        color: Colors.purple,
+                      ),
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
-                        hintText: "0",
+                        hintText: "0.0",
                         hintStyle: TextStyle(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.w300,
                           color: Colors.purple,
                         ),
@@ -236,7 +235,7 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
     } else {
       setState(
         () {
-          secondTextControllerValue.text = timeUnitConverte(
+          secondTextControllerValue.text = volumeUnitConverte(
             firstIntialDropDownValue,
             secondIntialDropDownValue,
             firstTextControllerValue,

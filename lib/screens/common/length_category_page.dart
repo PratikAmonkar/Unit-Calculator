@@ -1,29 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:unit_converter/functions/mass_unit_convert.dart';
+import 'package:unit_converter/functions/length_unit_converter.dart';
 import 'package:unit_converter/widgets/alertbox_widget.dart';
 
-class MassCategoryPage extends StatefulWidget {
-  const MassCategoryPage({Key? key}) : super(key: key);
+class LengthCategoryPage extends StatefulWidget {
+  const LengthCategoryPage({Key? key}) : super(key: key);
 
   @override
-  State<MassCategoryPage> createState() => _AngleCategoryPageState();
+  State<LengthCategoryPage> createState() => _AngleCategoryPageState();
 }
 
-class _AngleCategoryPageState extends State<MassCategoryPage> {
-  String firstIntialDropDownValue = 'grams';
-  String secondIntialDropDownValue = 'kilograms';
+class _AngleCategoryPageState extends State<LengthCategoryPage> {
+  String firstIntialDropDownValue = 'centimeters';
+  String secondIntialDropDownValue = 'meters';
 
   final firstDropDownValue = [
-    "grams",
-    "kilograms",
-    "carats",
+    "centimeters",
+    "meters",
+    "feet",
+    "inches",
+    "kilometers"
   ];
 
   final secondDropDownValue = [
-    "grams",
-    "kilograms",
-    "carats",
+    "centimeters",
+    "meters",
+    "feet",
+    "inches",
+    "kilometers"
   ];
 
   final firstTextControllerValue = TextEditingController();
@@ -51,9 +55,9 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
                 bottom: 30,
               ),
               child: Text(
-                "Mass Unit Converter",
+                "Length Unit Converter",
                 style: TextStyle(
-                  fontSize: 30.0,
+                  fontSize: 26.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.purple,
                 ),
@@ -115,9 +119,7 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
               height: 50.0,
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                top: 50.0,
-              ),
+              padding: const EdgeInsets.only(top: 50.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
@@ -135,7 +137,7 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
               ),
             ),
             const SizedBox(
-              height: 50.0,
+              height: 20.0,
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
@@ -145,7 +147,6 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
                   SizedBox(
                     width: 200.0,
                     child: TextFormField(
-                      enabled: false,
                       controller: secondTextControllerValue,
                       style: const TextStyle(
                         fontSize: 25,
@@ -240,7 +241,7 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
     } else {
       setState(
         () {
-          secondTextControllerValue.text = massUnitConverte(
+          secondTextControllerValue.text = lengthUnitConverte(
             firstIntialDropDownValue,
             secondIntialDropDownValue,
             firstTextControllerValue,

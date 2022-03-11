@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:unit_converter/model/category_model.dart';
-import 'package:unit_converter/screens/angle_category_page.dart';
-import 'package:unit_converter/screens/area_category_page.dart';
-import 'package:unit_converter/screens/data_category_page.dart';
-import 'package:unit_converter/screens/length_category_page.dart';
-import 'package:unit_converter/screens/mass_category_page.dart';
-import 'package:unit_converter/screens/temperature_category_page.dart';
-import 'package:unit_converter/screens/time_category_page.dart';
-import 'package:unit_converter/screens/volume_category_page.dart';
+import 'package:unit_converter/screens/common/angle_category_page.dart';
+import 'package:unit_converter/screens/common/area_category_page.dart';
+import 'package:unit_converter/screens/common/data_category_page.dart';
+import 'package:unit_converter/screens/common/length_category_page.dart';
+import 'package:unit_converter/screens/common/mass_category_page.dart';
+import 'package:unit_converter/screens/common/temperature_category_page.dart';
+import 'package:unit_converter/screens/common/time_category_page.dart';
+import 'package:unit_converter/screens/common/volume_category_page.dart';
 
-class CategoryPage extends StatefulWidget {
-  const CategoryPage({Key? key}) : super(key: key);
+class MobileScreen extends StatefulWidget {
+  const MobileScreen({Key? key}) : super(key: key);
 
   @override
-  State<CategoryPage> createState() => _CategoryPageState();
+  State<MobileScreen> createState() => _MobileScreenState();
 }
 
-class _CategoryPageState extends State<CategoryPage> {
+class _MobileScreenState extends State<MobileScreen> {
   final List<CategoryImage> _items = [
     CategoryImage(
       "images/angle.png",
@@ -55,6 +55,8 @@ class _CategoryPageState extends State<CategoryPage> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -75,10 +77,10 @@ class _CategoryPageState extends State<CategoryPage> {
         ),
       ),
       body: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 15,
-          crossAxisCount: 2,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisSpacing: isPortrait ? 10 : 7,
+          mainAxisSpacing: isPortrait ? 10 : 7,
+          crossAxisCount: isPortrait ? 2 : 3,
         ),
         itemCount: _items.length,
         itemBuilder: (context, index) {
@@ -134,25 +136,22 @@ class _CategoryPageState extends State<CategoryPage> {
                 );
               }
             },
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    _items[index].imagePath,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  _items[index].imagePath,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  _items[index].categoryName,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    _items[index].categoryName,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           );
         },
