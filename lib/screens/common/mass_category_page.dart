@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:unit_converter/functions/mass_unit_convert.dart';
 import 'package:unit_converter/widgets/alertbox_widget.dart';
 
@@ -31,37 +30,36 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
 
   @override
   Widget build(BuildContext context) {
+     var deviceWidth = MediaQuery.of(context).size.width;
+    var deviceHeight = MediaQuery.of(context).size.height;
+    final bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        centerTitle: true,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-        ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const Padding(
-              padding: EdgeInsets.only(
-                top: 10.0,
-                bottom: 30,
-              ),
-              child: Text(
-                "Mass Unit Converter",
-                style: TextStyle(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.purple,
+      body: SafeArea(
+        child: SizedBox(
+          width: deviceWidth,
+          height: deviceHeight,
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(
+                  top: 15.0,
+                ),
+                child: Text(
+                  "Mass Unit Converter",
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.purple,
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
+              SizedBox(
+                height: deviceHeight / 15,
+              ),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
@@ -110,42 +108,33 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
                   ),
                 ],
               ),
-            ),
-            const SizedBox(
-              height: 50.0,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 50.0,
+              SizedBox(
+                height: isPortrait ? deviceHeight / 3 : deviceHeight / 4,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Icon(
+                      Icons.arrow_upward,
+                      size: 35.5,
+                      color: Colors.purple,
+                    ),
+                    Icon(
+                      Icons.arrow_downward,
+                      size: 35.5,
+                      color: Colors.purple,
+                    ),
+                  ],
+                ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
-                    Icons.arrow_upward,
-                    size: 35.5,
-                    color: Colors.purple,
-                  ),
-                  Icon(
-                    Icons.arrow_downward,
-                    size: 35.5,
-                    color: Colors.purple,
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 50.0,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
                     width: 200.0,
                     child: TextFormField(
-                      enabled: false,
                       controller: secondTextControllerValue,
                       style: const TextStyle(
                         fontSize: 25,
@@ -156,7 +145,7 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
                       decoration: const InputDecoration(
                         hintText: "0.0",
                         hintStyle: TextStyle(
-                          fontSize: 25,
+                          fontSize: 30,
                           fontWeight: FontWeight.w300,
                           color: Colors.purple,
                         ),
@@ -189,31 +178,32 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
                   ),
                 ],
               ),
-            ),
-            const SizedBox(
-              height: 100.0,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                convertData();
-              },
-              style: OutlinedButton.styleFrom(
-                padding: const EdgeInsets.only(
-                  left: 50.0,
-                  right: 50.0,
+              SizedBox(
+                height: deviceHeight / 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  convertData();
+                },
+                style: OutlinedButton.styleFrom(
+                  padding: const EdgeInsets.only(
+                    left: 50.0,
+                    right: 50.0,
+                  ),
+                ),
+                child: const Text(
+                  "Convert",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
                 ),
               ),
-              child: const Text(
-                "Convert",
-                style: TextStyle(
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
+  
   }
 
   void convertData() {
