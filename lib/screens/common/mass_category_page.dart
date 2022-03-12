@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:unit_converter/functions/mass_unit_convert.dart';
 import 'package:unit_converter/widgets/alertbox_widget.dart';
+
+import 'angle_category_page.dart';
+import 'area_category_page.dart';
+import 'data_category_page.dart';
+import 'length_category_page.dart';
+import 'temperature_category_page.dart';
+import 'time_category_page.dart';
+import 'volume_category_page.dart';
 
 class MassCategoryPage extends StatefulWidget {
   const MassCategoryPage({Key? key}) : super(key: key);
@@ -37,25 +46,192 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
 
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text(
+          "Mass Unit Converter",
+          style: TextStyle(
+            color: Colors.purple,
+            fontSize: 25.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        elevation: 0.0,
+        centerTitle: true,
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          statusBarColor: Colors.white,
+          statusBarIconBrightness: Brightness.dark,
+        ),
+        iconTheme: const IconThemeData(
+          color: Colors.purple,
+        ),
+      ),
+            drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: ListView(
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 8.0,
+              ),
+              child: Text(
+                "Categories",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/angle.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Angle",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const AngleCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/area.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Area",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const AreaCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/mass.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Mass",
+              ),
+              tileColor: Colors.purple.shade100,
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const MassCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/temperature.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Temperature",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const TemperatureCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/length.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Length",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const LengthCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/volume.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Volume",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const VolumeCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/data.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Data",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const DataCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/time.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Time",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const TimeCategoryPage(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      
       body: SafeArea(
         child: SizedBox(
           width: deviceWidth,
           height: deviceHeight,
           child: Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.only(
-                  top: 15.0,
-                ),
-                child: Text(
-                  "Mass Unit Converter",
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.purple,
-                  ),
-                ),
-              ),
               SizedBox(
                 height: deviceHeight / 15,
               ),

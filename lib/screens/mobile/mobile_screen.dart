@@ -75,6 +75,167 @@ class _MobileScreenState extends State<MobileScreen> {
           statusBarColor: Colors.white,
           statusBarIconBrightness: Brightness.dark,
         ),
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: ListView(
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 8.0,
+              ),
+              child: Text(
+                "Categories",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/angle.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Angle",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const AngleCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/area.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Area",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const AreaCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/mass.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Mass",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const MassCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/temperature.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Temperature",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const TemperatureCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/length.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Length",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const LengthCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/volume.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Volume",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const VolumeCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/data.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Data",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const DataCategoryPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Image.asset(
+                "images/time.png",
+                height: 30.0,
+              ),
+              title: const Text(
+                "Time",
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const TimeCategoryPage(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
