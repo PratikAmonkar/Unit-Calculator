@@ -39,11 +39,12 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
 
   @override
   Widget build(BuildContext context) {
-     var deviceWidth = MediaQuery.of(context).size.width;
+    var deviceWidth = MediaQuery.of(context).size.width;
     var deviceHeight = MediaQuery.of(context).size.height;
     final bool isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
-
+    var mobileSize = MediaQuery.of(context).size.shortestSide;
+    final bool isMobile = mobileSize < 600;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -66,166 +67,171 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
           color: Colors.purple,
         ),
       ),
-            drawer: Drawer(
-        backgroundColor: Colors.white,
-        child: ListView(
-          children: [
-            const Padding(
-              padding: EdgeInsets.only(
-                left: 8.0,
-              ),
-              child: Text(
-                "Categories",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Image.asset(
-                "images/angle.png",
-                height: 30.0,
-              ),
-              title: const Text(
-                "Angle",
-              ),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) =>
-                        const AngleCategoryPage(),
+      drawer: isMobile
+          ? Drawer(
+              backgroundColor: Colors.white,
+              child: ListView(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(
+                      left: 8.0,
+                    ),
+                    child: Text(
+                      "Categories",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                );
-              },
-            ),
-            ListTile(
-              leading: Image.asset(
-                "images/area.png",
-                height: 30.0,
-              ),
-              title: const Text(
-                "Area",
-              ),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => const AreaCategoryPage(),
+                  ListTile(
+                    leading: Image.asset(
+                      "images/angle.png",
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      "Angle",
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const AngleCategoryPage(),
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
-            ListTile(
-              leading: Image.asset(
-                "images/mass.png",
-                height: 30.0,
-              ),
-              title: const Text(
-                "Mass",
-              ),
-              tileColor: Colors.purple.shade100,
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => const MassCategoryPage(),
+                  ListTile(
+                    leading: Image.asset(
+                      "images/area.png",
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      "Area",
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const AreaCategoryPage(),
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
-            ListTile(
-              leading: Image.asset(
-                "images/temperature.png",
-                height: 30.0,
-              ),
-              title: const Text(
-                "Temperature",
-              ),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) =>
-                        const TemperatureCategoryPage(),
+                  ListTile(
+                    leading: Image.asset(
+                      "images/mass.png",
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      "Mass",
+                    ),
+                    tileColor: Colors.purple.shade100,
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const MassCategoryPage(),
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
-            ListTile(
-              leading: Image.asset(
-                "images/length.png",
-                height: 30.0,
-              ),
-              title: const Text(
-                "Length",
-              ),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) =>
-                        const LengthCategoryPage(),
+                  ListTile(
+                    leading: Image.asset(
+                      "images/temperature.png",
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      "Temperature",
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const TemperatureCategoryPage(),
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
-            ListTile(
-              leading: Image.asset(
-                "images/volume.png",
-                height: 30.0,
-              ),
-              title: const Text(
-                "Volume",
-              ),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) =>
-                        const VolumeCategoryPage(),
+                  ListTile(
+                    leading: Image.asset(
+                      "images/length.png",
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      "Length",
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const LengthCategoryPage(),
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
-            ListTile(
-              leading: Image.asset(
-                "images/data.png",
-                height: 30.0,
-              ),
-              title: const Text(
-                "Data",
-              ),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => const DataCategoryPage(),
+                  ListTile(
+                    leading: Image.asset(
+                      "images/volume.png",
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      "Volume",
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const VolumeCategoryPage(),
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
-            ListTile(
-              leading: Image.asset(
-                "images/time.png",
-                height: 30.0,
-              ),
-              title: const Text(
-                "Time",
-              ),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => const TimeCategoryPage(),
+                  ListTile(
+                    leading: Image.asset(
+                      "images/data.png",
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      "Data",
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const DataCategoryPage(),
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-      
+                  ListTile(
+                    leading: Image.asset(
+                      "images/time.png",
+                      height: 30.0,
+                    ),
+                    title: const Text(
+                      "Time",
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const TimeCategoryPage(),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            )
+          : null,
       body: SafeArea(
         child: SizedBox(
           width: deviceWidth,
@@ -379,7 +385,6 @@ class _AngleCategoryPageState extends State<MassCategoryPage> {
         ),
       ),
     );
-  
   }
 
   void convertData() {
