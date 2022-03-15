@@ -47,13 +47,6 @@ class _MobileScreenState extends State<MobileScreen> {
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              "images/pi.png",
-              height: 20.0,
-            ),
-            label: "Constants",
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(
               "images/settings.png",
               height: 20.0,
             ),
