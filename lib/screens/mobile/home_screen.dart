@@ -55,6 +55,10 @@ class _CategoryPageState extends State<CategoryPage> {
 
   @override
   Widget build(BuildContext context) {
+    var devicePadding = MediaQuery.of(context).padding;
+    var newDeviceHeight = MediaQuery.of(context).size.height * 1.00 -
+        devicePadding.top -
+        devicePadding.bottom;
     final bool isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
@@ -142,8 +146,8 @@ class _CategoryPageState extends State<CategoryPage> {
                 Image.asset(
                   _items[index].imagePath,
                 ),
-                const SizedBox(
-                  height: 10,
+                SizedBox(
+                  height: newDeviceHeight * 0.02,
                 ),
                 Text(
                   _items[index].categoryName,

@@ -39,13 +39,17 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
 
   @override
   Widget build(BuildContext context) {
-    var deviceWidth = MediaQuery.of(context).size.width;
-    var deviceHeight = MediaQuery.of(context).size.height;
+    var deviceWidth = MediaQuery.of(context).size.width * 1.00;
+    var deviceHeight = MediaQuery.of(context).size.height * 1.00;
+    var devicePadding = MediaQuery.of(context).padding;
+    var newDeviceHeight =
+        deviceHeight - devicePadding.top - devicePadding.bottom;
     final bool isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     var mobileSize = MediaQuery.of(context).size.shortestSide;
     final bool isMobile = mobileSize < 600;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -74,159 +78,226 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
                 children: [
                   const Padding(
                     padding: EdgeInsets.only(
-                      left: 8.0,
+                      left: 10.0,
+                      top: 10.0,
+                      bottom: 10.0,
                     ),
                     child: Text(
                       "Categories",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
+                        fontSize: 20.0,
                       ),
                     ),
                   ),
-                  ListTile(
-                    leading: Image.asset(
-                      "images/angle.png",
-                      height: 30.0,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
                     ),
-                    title: const Text(
-                      "Angle",
-                    ),
-                    onTap: () {
-                      Navigator.of(context).pop();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              const AngleCategoryPage(),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/angle.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Angle",
+                        style: TextStyle(
+                          fontSize: 15.0,
                         ),
-                      );
-                    },
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const AngleCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
                   ),
-                  ListTile(
-                    leading: Image.asset(
-                      "images/area.png",
-                      height: 30.0,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
                     ),
-                    title: const Text(
-                      "Area",
-                    ),
-                    onTap: () {
-                      Navigator.of(context).pop();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              const AreaCategoryPage(),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/area.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Area",
+                        style: TextStyle(
+                          fontSize: 15.0,
                         ),
-                      );
-                    },
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const AreaCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
                   ),
-                  ListTile(
-                    leading: Image.asset(
-                      "images/mass.png",
-                      height: 30.0,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
                     ),
-                    title: const Text(
-                      "Mass",
-                    ),
-                    onTap: () {
-                      Navigator.of(context).pop();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              const MassCategoryPage(),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/mass.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Mass",
+                        style: TextStyle(
+                          fontSize: 15.0,
                         ),
-                      );
-                    },
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const MassCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
                   ),
-                  ListTile(
-                    leading: Image.asset(
-                      "images/temperature.png",
-                      height: 30.0,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
                     ),
-                    title: const Text(
-                      "Temperature",
-                    ),
-                    onTap: () {
-                      Navigator.of(context).pop();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              const TemperatureCategoryPage(),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/temperature.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Temperature",
+                        style: TextStyle(
+                          fontSize: 15.0,
                         ),
-                      );
-                    },
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const TemperatureCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
                   ),
-                  ListTile(
-                    leading: Image.asset(
-                      "images/length.png",
-                      height: 30.0,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
                     ),
-                    title: const Text(
-                      "Length",
-                    ),
-                    onTap: () {
-                      Navigator.of(context).pop();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              const LengthCategoryPage(),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/length.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Length",
+                        style: TextStyle(
+                          fontSize: 15.0,
                         ),
-                      );
-                    },
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const LengthCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
                   ),
-                  ListTile(
-                    leading: Image.asset(
-                      "images/volume.png",
-                      height: 30.0,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
                     ),
-                    title: const Text(
-                      "Volume",
-                    ),
-                    onTap: () {
-                      Navigator.of(context).pop();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              const VolumeCategoryPage(),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/volume.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Volume",
+                        style: TextStyle(
+                          fontSize: 15.0,
                         ),
-                      );
-                    },
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const VolumeCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
                   ),
-                  ListTile(
-                    leading: Image.asset(
-                      "images/data.png",
-                      height: 30.0,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
                     ),
-                    title: const Text(
-                      "Data",
-                    ),
-                    onTap: () {
-                      Navigator.of(context).pop();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              const DataCategoryPage(),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/data.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Data",
+                        style: TextStyle(
+                          fontSize: 15.0,
                         ),
-                      );
-                    },
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const DataCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
                   ),
-                  ListTile(
-                    leading: Image.asset(
-                      "images/time.png",
-                      height: 30.0,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
                     ),
-                    title: const Text(
-                      "Time",
-                    ),
-                    tileColor: Colors.purple.shade100,
-                    onTap: () {
-                      Navigator.of(context).pop();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              const TimeCategoryPage(),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/time.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Time",
+                        style: TextStyle(
+                          fontSize: 15.0,
                         ),
-                      );
-                    },
+                      ),
+                      tileColor: Colors.purple.shade100,
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const TimeCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ],
               ),
@@ -235,17 +306,19 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
       body: SafeArea(
         child: SizedBox(
           width: deviceWidth,
-          height: deviceHeight,
+          height: newDeviceHeight,
           child: Column(
             children: [
               SizedBox(
-                height: deviceHeight / 15,
+                height: isPortrait
+                    ? newDeviceHeight * 0.05
+                    : newDeviceHeight * 0.02,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    width: 200.0,
+                    width: deviceWidth * 0.55,
                     child: TextFormField(
                       controller: firstTextControllerValue,
                       style: const TextStyle(
@@ -255,7 +328,7 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
                       ),
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
-                        hintText: "0.0",
+                        hintText: "0",
                         hintStyle: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w300,
@@ -291,13 +364,12 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
                 ],
               ),
               SizedBox(
-                height: isPortrait ? deviceHeight / 3 : deviceHeight / 4,
+                height: isPortrait
+                    ? newDeviceHeight * 0.40
+                    : newDeviceHeight * 0.20,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    SizedBox(
-                      height: 20,
-                    ),
                     Icon(
                       Icons.arrow_upward,
                       size: 35.5,
@@ -315,7 +387,7 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    width: 200.0,
+                    width: deviceWidth * 0.55,
                     child: TextFormField(
                       controller: secondTextControllerValue,
                       style: const TextStyle(
@@ -325,7 +397,7 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
                       ),
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
-                        hintText: "0.0",
+                        hintText: "0",
                         hintStyle: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w300,
@@ -361,7 +433,9 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
                 ],
               ),
               SizedBox(
-                height: deviceHeight / 10,
+                height: isPortrait
+                    ? newDeviceHeight * 0.05
+                    : newDeviceHeight * 0.05,
               ),
               ElevatedButton(
                 onPressed: () {
