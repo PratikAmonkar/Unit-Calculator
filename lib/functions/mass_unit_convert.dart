@@ -1,34 +1,60 @@
+import 'package:units_converter/units_converter.dart';
+
 massUnitConverte(firstIntialDropDownValue, secondIntialDropDownValue,
     firstTextControllerValue, secondTextControllerValue) {
   if (firstIntialDropDownValue == "grams" &&
       secondIntialDropDownValue == "kilograms") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) / 1000).toStringAsFixed(3);
-    return finalOutput + " " + "kg";
+    var mass = Mass(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        MASS.grams,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = mass.kilograms;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "grams" &&
       secondIntialDropDownValue == "carats") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) * 5).toStringAsFixed(2);
-    return finalOutput + " " + "ct";
+    var mass = Mass(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        MASS.grams,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = mass.carats;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "kilograms" &&
       secondIntialDropDownValue == "grams") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) * 1000).toStringAsFixed(2);
-    return finalOutput + " " + "g";
+    var mass = Mass(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        MASS.kilograms,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = mass.grams;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "kilograms" &&
       secondIntialDropDownValue == "carats") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) * 5000).toStringAsFixed(2);
-    return finalOutput + " " + "ct";
+    var mass = Mass(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        MASS.kilograms,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = mass.carats;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "carats" &&
       secondIntialDropDownValue == "grams") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) / 5).toStringAsFixed(2);
-    return finalOutput + " " + "g";
+    var mass = Mass(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        MASS.carats,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = mass.grams;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "carats" &&
       secondIntialDropDownValue == "kilograms") {
-    var finalOutput = (double.parse(firstTextControllerValue.text) * 0.0002)
-        .toStringAsFixed(6);
-    return finalOutput + " " + "kg";
+    var mass = Mass(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        MASS.carats,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = mass.kilograms;
+    return "${unit.stringValue} ${unit.symbol}";
   }
 }

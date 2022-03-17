@@ -1,11 +1,24 @@
+import 'package:units_converter/units_converter.dart';
+
 areaUnitConverte(firstIntialDropDownValue, secondIntialDropDownValue,
     firstTextControllerValue, secondTextControllerValue) {
   if (firstIntialDropDownValue == "acres" &&
       secondIntialDropDownValue == "hectares") {
-    return (double.parse(firstTextControllerValue.text) * 0.404)
-        .toStringAsFixed(3);
-  } else {
-    return (double.parse(firstTextControllerValue.text) * 2.4711)
-        .toStringAsFixed(2);
+    var area = Area(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        AREA.acres,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = area.hectares;
+    return "${unit.stringValue} ${unit.symbol}";
+  } else if (firstIntialDropDownValue == "hectares" &&
+      secondIntialDropDownValue == "acres") {
+    var area = Area(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        AREA.hectares,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = area.acres;
+    return "${unit.stringValue} ${unit.symbol}";
   }
 }

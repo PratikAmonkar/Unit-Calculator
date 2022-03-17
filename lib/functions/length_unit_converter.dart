@@ -1,104 +1,186 @@
+import 'package:units_converter/units_converter.dart';
+
 lengthUnitConverte(firstIntialDropDownValue, secondIntialDropDownValue,
     firstTextControllerValue, secondTextControllerValue) {
   if (firstIntialDropDownValue == "centimeters" &&
       secondIntialDropDownValue == "meters") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) / 100).toStringAsFixed(3);
-    return finalOutput + " " + "m";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.centimeters,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.meters;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "centimeters" &&
       secondIntialDropDownValue == "feet") {
-    var finalOutput = (double.parse(firstTextControllerValue.text) * 1 / 30.48)
-        .toStringAsFixed(3);
-    return finalOutput + " " + "ft";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.centimeters,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.feet;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "centimeters" &&
       secondIntialDropDownValue == "kilometers") {
-    var finalOutput = (double.parse(firstTextControllerValue.text) / 100000)
-        .toStringAsFixed(3);
-    return finalOutput + " " + "km";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.centimeters,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.kilometers;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "centimeters" &&
       secondIntialDropDownValue == "inches") {
-    var finalOutput = (double.parse(firstTextControllerValue.text) * 0.393701)
-        .toStringAsFixed(3);
-    return finalOutput + " " + "inch";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.centimeters,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.inches;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "meters" &&
       secondIntialDropDownValue == "centimeters") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) * 100).toStringAsFixed(3);
-    return finalOutput + " " + "cm";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.meters,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.centimeters;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "meters" &&
       secondIntialDropDownValue == "feet") {
-    var finalOutput = (double.parse(firstTextControllerValue.text) * 3.281)
-        .toStringAsFixed(3);
-    return finalOutput + " " + "ft";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.meters,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.feet;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "meters" &&
       secondIntialDropDownValue == "kilometers") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) / 1000).toStringAsFixed(3);
-    return finalOutput + " " + "km";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.meters,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.kilometers;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "meters" &&
       secondIntialDropDownValue == "inches") {
-    var finalOutput = (double.parse(firstTextControllerValue.text) * 39.37)
-        .toStringAsFixed(3);
-    return finalOutput + " " + "inch";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.meters,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.inches;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "feet" &&
       secondIntialDropDownValue == "centimeters") {
-    var finalOutput = (double.parse(firstTextControllerValue.text) * 30.48)
-        .toStringAsFixed(3);
-    return finalOutput + " " + "cm";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.feet,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.centimeters;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "feet" &&
       secondIntialDropDownValue == "meters") {
-    var finalOutput = (double.parse(firstTextControllerValue.text) * 0.3048)
-        .toStringAsFixed(3);
-    return finalOutput + " " + "m";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.feet,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.meters;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "feet" &&
       secondIntialDropDownValue == "kilometers") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) / 3281).toStringAsFixed(6);
-    return finalOutput + " " + "km";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.feet,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.kilometers;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "feet" &&
       secondIntialDropDownValue == "inches") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) * 12).toStringAsFixed(3);
-    return finalOutput + " " + "inch";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.feet,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.inches;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "kilometers" &&
       secondIntialDropDownValue == "centimeters") {
-    var finalOutput = (double.parse(firstTextControllerValue.text) * 100000)
-        .toStringAsFixed(3);
-    return finalOutput + " " + "cm";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.kilometers,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.centimeters;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "kilometers" &&
       secondIntialDropDownValue == "meters") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) * 1000).toStringAsFixed(3);
-    return finalOutput + " " + "m";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.kilometers,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.meters;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "kilometers" &&
       secondIntialDropDownValue == "feet") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) * 3281).toStringAsFixed(3);
-    return finalOutput + " " + "ft";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.kilometers,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.feet;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "kilometers" &&
       secondIntialDropDownValue == "inches") {
-    var finalOutput = (double.parse(firstTextControllerValue.text) * 39370)
-        .toStringAsFixed(3);
-    return finalOutput + " " + "inch";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.kilometers,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.inches;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "inches" &&
       secondIntialDropDownValue == "centimeters") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) * 2.54).toStringAsFixed(3);
-    return finalOutput + " " + "cm";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.inches,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.centimeters;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "inches" &&
       secondIntialDropDownValue == "meters") {
-    var finalOutput = (double.parse(firstTextControllerValue.text) / 39.37)
-        .toStringAsFixed(3);
-    return finalOutput + " " + "m";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.inches,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.meters;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "inches" &&
       secondIntialDropDownValue == "feet") {
-    var finalOutput =
-        (double.parse(firstTextControllerValue.text) / 12).toStringAsFixed(3);
-    return finalOutput + " " + "ft";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.inches,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.feet;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "inches" &&
       secondIntialDropDownValue == "kilometers") {
-    var finalOutput = (double.parse(firstTextControllerValue.text) * 0.0000254)
-        .toStringAsFixed(8);
-    return finalOutput + " " + "km";
+    var length = Length(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        LENGTH.inches,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = length.kilometers;
+    return "${unit.stringValue} ${unit.symbol}";
   }
 }

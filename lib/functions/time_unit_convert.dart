@@ -1,49 +1,60 @@
+import 'package:units_converter/units_converter.dart';
+
 timeUnitConverte(firstIntialDropDownValue, secondIntialDropDownValue,
     firstTextControllerValue, secondTextControllerValue) {
   if (firstIntialDropDownValue == "second" &&
       secondIntialDropDownValue == "minute") {
-    var finalOutputOne = (double.parse(firstTextControllerValue.text) / 60)
-        .toStringAsFixed(2)
-        .split('.')[0];
-
-    var finalOutputTwo = (double.parse(firstTextControllerValue.text) / 60)
-        .toStringAsFixed(2)
-        .split('.')[1];
-    String demo =
-        finalOutputOne + " " + "min" + " " + finalOutputTwo + " " + "sec";
-    return demo;
+    var time = Time(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        TIME.seconds,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = time.minutes;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "second" &&
       secondIntialDropDownValue == "hour") {
-    var finalOutputOne = (double.parse(firstTextControllerValue.text) / 3600)
-        .toStringAsFixed(2)
-        .split('.')[0];
-
-    var finalOutputTwo = (double.parse(firstTextControllerValue.text) / 3600)
-        .toStringAsFixed(2)
-        .split('.')[1];
-    String demo =
-        finalOutputOne + " " + "hr" + " " + finalOutputTwo + " " + "sec";
-    return demo;
+    var time = Time(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        TIME.seconds,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = time.hours;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "minute" &&
       secondIntialDropDownValue == "second") {
-    return (int.parse(firstTextControllerValue.text) * 60).toString();
+    var time = Time(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        TIME.minutes,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = time.seconds;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "minute" &&
       secondIntialDropDownValue == "hour") {
-    var finalOutputOne = (double.parse(firstTextControllerValue.text) / 60)
-        .toStringAsFixed(2)
-        .split('.')[0];
-
-    var finalOutputTwo = (double.parse(firstTextControllerValue.text) / 60)
-        .toStringAsFixed(2)
-        .split('.')[1];
-    String demo =
-        finalOutputOne + " " + "hr" + " " + finalOutputTwo + " " + "min";
-    return demo;
+    var time = Time(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        TIME.minutes,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = time.hours;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "hour" &&
       secondIntialDropDownValue == "second") {
-    return (int.parse(firstTextControllerValue.text) * 3600).toString();
+    var time = Time(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        TIME.hours,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = time.seconds;
+    return "${unit.stringValue} ${unit.symbol}";
   } else if (firstIntialDropDownValue == "hour" &&
       secondIntialDropDownValue == "minute") {
-    return (int.parse(firstTextControllerValue.text) * 60).toString();
+    var time = Time(significantFigures: 5, removeTrailingZeros: true)
+      ..convert(
+        TIME.hours,
+        double.parse(firstTextControllerValue.text),
+      );
+    var unit = time.minutes;
+    return "${unit.stringValue} ${unit.symbol}";
   }
 }
