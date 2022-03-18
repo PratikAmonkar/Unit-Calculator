@@ -55,8 +55,8 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
         title: const Text(
           "Angle Unit Converter",
           style: TextStyle(
-            color: Colors.purple,
-            fontSize: 25.0,
+            color: Colors.black,
+            fontSize: 20.0,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -67,7 +67,7 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
           statusBarIconBrightness: Brightness.dark,
         ),
         iconTheme: const IconThemeData(
-          color: Colors.purple,
+          color: Colors.black,
         ),
       ),
       drawer: isMobile
@@ -317,21 +317,21 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    width: deviceWidth * 0.55,
+                    width: isMobile ? deviceWidth * 0.50 : deviceWidth * 0.30,
                     child: TextFormField(
                       controller: firstTextControllerValue,
                       style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w300,
-                        color: Colors.purple,
+                        color: Colors.black,
                       ),
                       keyboardType: TextInputType.number,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         hintText: "0",
                         hintStyle: TextStyle(
-                          fontSize: 25,
+                          fontSize: isMobile ? 25 : 30,
                           fontWeight: FontWeight.w300,
-                          color: Colors.purple,
+                          color: Colors.black,
                         ),
                       ),
                     ),
@@ -345,8 +345,9 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
                           value: items,
                           child: Text(
                             items,
-                            style: const TextStyle(
-                              color: Colors.purple,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: isMobile ? 15 : 20,
                             ),
                           ),
                         );
@@ -364,20 +365,24 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
               ),
               SizedBox(
                 height: isPortrait
-                    ? newDeviceHeight * 0.40
-                    : newDeviceHeight * 0.20,
+                    ? isMobile
+                        ? newDeviceHeight * 0.40
+                        : newDeviceHeight * 0.40
+                    : isMobile
+                        ? newDeviceHeight * 0.15
+                        : newDeviceHeight * 0.40,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Icon(
                       Icons.arrow_upward,
-                      size: 35.5,
-                      color: Colors.purple,
+                      size: 25.5,
+                      color: Colors.black,
                     ),
                     Icon(
                       Icons.arrow_downward,
-                      size: 35.5,
-                      color: Colors.purple,
+                      size: 25.5,
+                      color: Colors.black,
                     ),
                   ],
                 ),
@@ -386,21 +391,21 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    width: deviceWidth * 0.55,
+                    width: isMobile ? deviceWidth * 0.50 : deviceWidth * 0.30,
                     child: TextFormField(
                       controller: secondTextControllerValue,
                       style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w300,
-                        color: Colors.purple,
+                        color: Colors.black,
                       ),
                       keyboardType: TextInputType.number,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         hintText: "0",
                         hintStyle: TextStyle(
-                          fontSize: 30,
+                          fontSize: isMobile ? 25 : 30,
                           fontWeight: FontWeight.w300,
-                          color: Colors.purple,
+                          color: Colors.black,
                         ),
                       ),
                     ),
@@ -414,8 +419,9 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
                           value: items,
                           child: Text(
                             items,
-                            style: const TextStyle(
-                              color: Colors.purple,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: isMobile ? 15 : 20,
                             ),
                           ),
                         );
@@ -436,11 +442,18 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
                     ? newDeviceHeight * 0.05
                     : newDeviceHeight * 0.05,
               ),
-              ElevatedButton(
+              OutlinedButton(
                 onPressed: () {
                   convertData();
                 },
                 style: OutlinedButton.styleFrom(
+                  shape: const StadiumBorder(),
+                  side: BorderSide(
+                    width: 1.5,
+                    color: Colors.black.withOpacity(
+                      0.5,
+                    ),
+                  ),
                   padding: const EdgeInsets.only(
                     left: 50.0,
                     right: 50.0,
@@ -450,6 +463,7 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
                   "Convert",
                   style: TextStyle(
                     fontSize: 20.0,
+                    color: Colors.black,
                   ),
                 ),
               ),

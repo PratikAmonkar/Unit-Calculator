@@ -14,7 +14,6 @@ class _TabletScreenState extends State<TabletScreen> {
   static const List _screenOptions = [
     HomeScreen(),
     SettingPage(),
-    SettingPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -41,13 +40,6 @@ class _TabletScreenState extends State<TabletScreen> {
               height: 30.0,
             ),
             label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              "images/pi.png",
-              height: 30.0,
-            ),
-            label: "Constants",
           ),
           BottomNavigationBarItem(
             icon: Image.asset(

@@ -56,8 +56,11 @@ class _HomeScreenState extends State<HomeScreen> {
   String indexNum = "";
   @override
   Widget build(BuildContext context) {
-    final deviceWidth = MediaQuery.of(context).size.width;
-    final deviceHeight = MediaQuery.of(context).size.height;
+    var deviceWidth = MediaQuery.of(context).size.width * 1.00;
+    var deviceHeight = MediaQuery.of(context).size.height * 1.00;
+    var devicePadding = MediaQuery.of(context).padding;
+    var newDeviceHeight =
+        deviceHeight - devicePadding.top - devicePadding.bottom;
     final bool isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
@@ -84,8 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
-              width: deviceWidth / 2,
-              height: deviceHeight,
+              width: deviceWidth * 0.50,
+              height: newDeviceHeight,
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisSpacing: 10,
@@ -126,8 +129,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(
-              width: deviceWidth / 2,
-              height: deviceHeight,
+              width: deviceWidth * 0.50,
+              height: newDeviceHeight,
               child: indexNum.isEmpty
                   ? const Center(
                       child: Text(

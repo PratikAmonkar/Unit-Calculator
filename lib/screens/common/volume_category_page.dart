@@ -54,8 +54,8 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
         title: const Text(
           "Volume Unit Converter",
           style: TextStyle(
-            color: Colors.purple,
-            fontSize: 25.0,
+            color: Colors.black,
+            fontSize: 20.0,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -66,7 +66,7 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
           statusBarIconBrightness: Brightness.dark,
         ),
         iconTheme: const IconThemeData(
-          color: Colors.purple,
+          color: Colors.black,
         ),
       ),
       drawer: isMobile
@@ -302,157 +302,173 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
             )
           : null,
       body: SafeArea(
-        child: SizedBox(
-          width: deviceWidth,
-          height: deviceHeight,
-          child: Column(
-            children: [
-              SizedBox(
-                height: isPortrait
-                    ? newDeviceHeight * 0.05
-                    : newDeviceHeight * 0.02,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  SizedBox(
-                    width: deviceWidth * 0.55,
-                    child: TextFormField(
-                      controller: firstTextControllerValue,
-                      style: const TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w300,
-                        color: Colors.purple,
-                      ),
-                      keyboardType: TextInputType.number,
-                      decoration: const InputDecoration(
-                        hintText: "0",
-                        hintStyle: TextStyle(
+        child: SingleChildScrollView(
+          child: SizedBox(
+            width: deviceWidth,
+            height: newDeviceHeight,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: isPortrait
+                      ? newDeviceHeight * 0.05
+                      : newDeviceHeight * 0.02,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      width: isMobile ? deviceWidth * 0.50 : deviceWidth * 0.30,
+                      child: TextFormField(
+                        controller: firstTextControllerValue,
+                        style: const TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w300,
-                          color: Colors.purple,
+                          color: Colors.black,
+                        ),
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          hintText: "0",
+                          hintStyle: TextStyle(
+                            fontSize: isMobile ? 25 : 30,
+                            fontWeight: FontWeight.w300,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  DropdownButton(
-                    value: firstIntialDropDownValue,
-                    icon: const Icon(Icons.keyboard_arrow_down),
-                    items: firstDropDownValue.map(
-                      (String items) {
-                        return DropdownMenuItem(
-                          value: items,
-                          child: Text(
-                            items,
-                            style: const TextStyle(
-                              color: Colors.purple,
+                    DropdownButton(
+                      value: firstIntialDropDownValue,
+                      icon: const Icon(Icons.keyboard_arrow_down),
+                      items: firstDropDownValue.map(
+                        (String items) {
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Text(
+                              items,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: isMobile ? 15 : 20,
+                              ),
                             ),
-                          ),
+                          );
+                        },
+                      ).toList(),
+                      onChanged: (String? newValue) {
+                        setState(
+                          () {
+                            firstIntialDropDownValue = newValue!;
+                          },
                         );
                       },
-                    ).toList(),
-                    onChanged: (String? newValue) {
-                      setState(
-                        () {
-                          firstIntialDropDownValue = newValue!;
-                        },
-                      );
-                    },
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: isPortrait
-                    ? newDeviceHeight * 0.40
-                    : newDeviceHeight * 0.20,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(
-                      Icons.arrow_upward,
-                      size: 35.5,
-                      color: Colors.purple,
-                    ),
-                    Icon(
-                      Icons.arrow_downward,
-                      size: 35.5,
-                      color: Colors.purple,
                     ),
                   ],
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  SizedBox(
-                    width: deviceWidth * 0.55,
-                    child: TextFormField(
-                      controller: secondTextControllerValue,
-                      style: const TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w300,
-                        color: Colors.purple,
+                SizedBox(
+                  height: isPortrait
+                               ? isMobile
+                        ? newDeviceHeight * 0.40
+                        : newDeviceHeight * 0.40
+                    : isMobile
+                        ? newDeviceHeight * 0.15
+                        : newDeviceHeight * 0.40,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.arrow_upward,
+                        size: 35.5,
+                        color: Colors.black,
                       ),
-                      keyboardType: TextInputType.number,
-                      decoration: const InputDecoration(
-                        hintText: "0",
-                        hintStyle: TextStyle(
-                          fontSize: 30,
+                      Icon(
+                        Icons.arrow_downward,
+                        size: 35.5,
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      width: isMobile ? deviceWidth * 0.50 : deviceWidth * 0.30,
+                      child: TextFormField(
+                        controller: secondTextControllerValue,
+                        style: const TextStyle(
+                          fontSize: 25,
                           fontWeight: FontWeight.w300,
-                          color: Colors.purple,
+                          color: Colors.black,
+                        ),
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          hintText: "0",
+                          hintStyle: TextStyle(
+                            fontSize: isMobile ? 25 : 30,
+                            fontWeight: FontWeight.w300,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  DropdownButton(
-                    value: secondIntialDropDownValue,
-                    icon: const Icon(Icons.keyboard_arrow_down),
-                    items: secondDropDownValue.map(
-                      (String items) {
-                        return DropdownMenuItem(
-                          value: items,
-                          child: Text(
-                            items,
-                            style: const TextStyle(
-                              color: Colors.purple,
+                    DropdownButton(
+                      value: secondIntialDropDownValue,
+                      icon: const Icon(Icons.keyboard_arrow_down),
+                      items: secondDropDownValue.map(
+                        (String items) {
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Text(
+                              items,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: isMobile ? 15 : 20,
+                              ),
                             ),
-                          ),
+                          );
+                        },
+                      ).toList(),
+                      onChanged: (String? newValue) {
+                        setState(
+                          () {
+                            secondIntialDropDownValue = newValue!;
+                          },
                         );
                       },
-                    ).toList(),
-                    onChanged: (String? newValue) {
-                      setState(
-                        () {
-                          secondIntialDropDownValue = newValue!;
-                        },
-                      );
-                    },
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: isPortrait
+                      ? newDeviceHeight * 0.05
+                      : newDeviceHeight * 0.05,
+                ),
+                OutlinedButton(
+                  onPressed: () {
+                    convertData();
+                  },
+                  style: OutlinedButton.styleFrom(
+                    shape: const StadiumBorder(),
+                    side: BorderSide(
+                      width: 1.5,
+                      color: Colors.black.withOpacity(
+                        0.5,
+                      ),
+                    ),
+                    padding: const EdgeInsets.only(
+                      left: 50.0,
+                      right: 50.0,
+                    ),
                   ),
-                ],
-              ),
-              SizedBox(
-                height: isPortrait
-                    ? newDeviceHeight * 0.05
-                    : newDeviceHeight * 0.05,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  convertData();
-                },
-                style: OutlinedButton.styleFrom(
-                  padding: const EdgeInsets.only(
-                    left: 50.0,
-                    right: 50.0,
+                  child: const Text(
+                    "Convert",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-                child: const Text(
-                  "Convert",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
