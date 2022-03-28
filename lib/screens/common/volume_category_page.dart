@@ -297,6 +297,136 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
                       },
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/binary-code.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Binary Conversion",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const TimeCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/force.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Force",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const TimeCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/gas-pump.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Fuel",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const TimeCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/size.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Show Size",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const TimeCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/torque-wrench.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Torque",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const TimeCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
             )
@@ -365,12 +495,12 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
                 ),
                 SizedBox(
                   height: isPortrait
-                               ? isMobile
-                        ? newDeviceHeight * 0.40
-                        : newDeviceHeight * 0.40
-                    : isMobile
-                        ? newDeviceHeight * 0.15
-                        : newDeviceHeight * 0.40,
+                      ? isMobile
+                          ? newDeviceHeight * 0.40
+                          : newDeviceHeight * 0.40
+                      : isMobile
+                          ? newDeviceHeight * 0.15
+                          : newDeviceHeight * 0.40,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:unit_converter/utils/device_selection.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {

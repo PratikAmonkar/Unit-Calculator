@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:unit_converter/screens/common/binary_coode_category_page.dart';
+import 'package:unit_converter/screens/common/force_category_page.dart';
+import 'package:unit_converter/screens/common/gas_pump_category_page.dart';
+import 'package:unit_converter/screens/common/shoe_size_category_page.dart';
+import 'package:unit_converter/screens/common/torque_category_page.dart';
 import 'package:unit_converter/widgets/alertbox_widget.dart';
 import 'package:unit_converter/functions/angle_unit_convert.dart';
 
@@ -293,6 +298,136 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
                           MaterialPageRoute(
                             builder: (BuildContext context) =>
                                 const TimeCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/binary-code.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Binary Conversion",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const BinaryCodeCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/force.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Force",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const ForceCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/gas-pump.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Fuel",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const FuelCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/size.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Show Size",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const ShowSizeCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/torque-wrench.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Torque",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const TorqueCategoryPage(),
                           ),
                         );
                       },

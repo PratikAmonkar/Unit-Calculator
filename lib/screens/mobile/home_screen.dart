@@ -3,11 +3,16 @@ import 'package:flutter/services.dart';
 import 'package:unit_converter/model/category_model.dart';
 import 'package:unit_converter/screens/common/angle_category_page.dart';
 import 'package:unit_converter/screens/common/area_category_page.dart';
+import 'package:unit_converter/screens/common/binary_coode_category_page.dart';
 import 'package:unit_converter/screens/common/data_category_page.dart';
+import 'package:unit_converter/screens/common/force_category_page.dart';
+import 'package:unit_converter/screens/common/gas_pump_category_page.dart';
 import 'package:unit_converter/screens/common/length_category_page.dart';
 import 'package:unit_converter/screens/common/mass_category_page.dart';
+import 'package:unit_converter/screens/common/shoe_size_category_page.dart';
 import 'package:unit_converter/screens/common/temperature_category_page.dart';
 import 'package:unit_converter/screens/common/time_category_page.dart';
+import 'package:unit_converter/screens/common/torque_category_page.dart';
 import 'package:unit_converter/screens/common/volume_category_page.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -50,6 +55,26 @@ class _CategoryPageState extends State<CategoryPage> {
     CategoryImage(
       "images/time.png",
       "Time",
+    ),
+    CategoryImage(
+      "images/binary-code.png",
+      "Binary Conversion",
+    ),
+    CategoryImage(
+      "images/force.png",
+      "Force",
+    ),
+    CategoryImage(
+      "images/gas-pump.png",
+      "Fuel",
+    ),
+    CategoryImage(
+      "images/size.png",
+      "Shoe Size",
+    ),
+    CategoryImage(
+      "images/torque-wrench.png",
+      "Torque",
     ),
   ];
 
@@ -136,6 +161,36 @@ class _CategoryPageState extends State<CategoryPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const TimeCategoryPage(),
+                  ),
+                );
+              } else if (index == 8) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const BinaryCodeCategoryPage(),
+                  ),
+                );
+              } else if (index == 9) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ForceCategoryPage(),
+                  ),
+                );
+              } else if (index == 10) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const FuelCategoryPage(),
+                  ),
+                );
+              } else if (index == 11) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ShowSizeCategoryPage(),
+                  ),
+                );
+              } else if (index == 12) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const TorqueCategoryPage(),
                   ),
                 );
               }

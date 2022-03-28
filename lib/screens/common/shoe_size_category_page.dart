@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:unit_converter/functions/temperature_nuit_convert.dart';
+import 'package:unit_converter/functions/shoe_size_unit_category.dart';
 import 'package:unit_converter/screens/common/binary_coode_category_page.dart';
 import 'package:unit_converter/screens/common/force_category_page.dart';
 import 'package:unit_converter/screens/common/gas_pump_category_page.dart';
-import 'package:unit_converter/screens/common/shoe_size_category_page.dart';
 import 'package:unit_converter/screens/common/torque_category_page.dart';
 import 'package:unit_converter/widgets/alertbox_widget.dart';
 
@@ -12,31 +11,35 @@ import 'angle_category_page.dart';
 import 'area_category_page.dart';
 import 'data_category_page.dart';
 import 'length_category_page.dart';
-import 'mass_category_page.dart';
+import 'temperature_category_page.dart';
 import 'time_category_page.dart';
 import 'volume_category_page.dart';
 
-class TemperatureCategoryPage extends StatefulWidget {
-  const TemperatureCategoryPage({Key? key}) : super(key: key);
+class ShowSizeCategoryPage extends StatefulWidget {
+  const ShowSizeCategoryPage({Key? key}) : super(key: key);
 
   @override
-  State<TemperatureCategoryPage> createState() => _AngleCategoryPageState();
+  State<ShowSizeCategoryPage> createState() => _AngleCategoryPageState();
 }
 
-class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
-  String firstIntialDropDownValue = 'celsius';
-  String secondIntialDropDownValue = 'fahrenheit';
+class _AngleCategoryPageState extends State<ShowSizeCategoryPage> {
+  String firstIntialDropDownValue = 'centimeter';
+  String secondIntialDropDownValue = 'inches';
 
   final firstDropDownValue = [
-    "celsius",
-    "fahrenheit",
-    "kelvin",
+    "centimeter",
+    "inches",
+    "uk indiachild",
+    "uk indiaman",
+    "uk indiawomen",
   ];
 
   final secondDropDownValue = [
-    "celsius",
-    "fahrenheit",
-    "kelvin",
+    "centimeter",
+    "inches",
+    "uk indiachild",
+    "uk indiaman",
+    "uk indiawomen",
   ];
 
   final firstTextControllerValue = TextEditingController();
@@ -58,15 +61,12 @@ class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const FittedBox(
-          fit: BoxFit.fitWidth,
-          child: Text(
-            "Temperature Unit Converter",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-            ),
+        title: const Text(
+          "Show Size Unit Converter",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
           ),
         ),
         elevation: 0.0,
@@ -170,7 +170,7 @@ class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                const MassCategoryPage(),
+                                const ShowSizeCategoryPage(),
                           ),
                         );
                       },
@@ -191,7 +191,6 @@ class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
                           fontSize: 15.0,
                         ),
                       ),
-                      tileColor: Colors.purple.shade100,
                       onTap: () {
                         Navigator.of(context).pop();
                         Navigator.of(context).push(
@@ -400,6 +399,7 @@ class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
                           fontSize: 15.0,
                         ),
                       ),
+                      tileColor: Colors.purple.shade100,
                       onTap: () {
                         Navigator.of(context).pop();
                         Navigator.of(context).push(
@@ -638,7 +638,7 @@ class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
     } else {
       setState(
         () {
-          secondTextControllerValue.text = temperatureUnitConverte(
+          secondTextControllerValue.text = shoeSizeUnitConverte(
             firstIntialDropDownValue,
             secondIntialDropDownValue,
             firstTextControllerValue,

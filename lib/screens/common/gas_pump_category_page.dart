@@ -1,42 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:unit_converter/functions/temperature_nuit_convert.dart';
+import 'package:unit_converter/functions/fuel_unit_category.dart';
 import 'package:unit_converter/screens/common/binary_coode_category_page.dart';
 import 'package:unit_converter/screens/common/force_category_page.dart';
-import 'package:unit_converter/screens/common/gas_pump_category_page.dart';
 import 'package:unit_converter/screens/common/shoe_size_category_page.dart';
 import 'package:unit_converter/screens/common/torque_category_page.dart';
 import 'package:unit_converter/widgets/alertbox_widget.dart';
 
-import 'angle_category_page.dart';
 import 'area_category_page.dart';
 import 'data_category_page.dart';
 import 'length_category_page.dart';
 import 'mass_category_page.dart';
+import 'temperature_category_page.dart';
 import 'time_category_page.dart';
 import 'volume_category_page.dart';
 
-class TemperatureCategoryPage extends StatefulWidget {
-  const TemperatureCategoryPage({Key? key}) : super(key: key);
+class FuelCategoryPage extends StatefulWidget {
+  const FuelCategoryPage({Key? key}) : super(key: key);
 
   @override
-  State<TemperatureCategoryPage> createState() => _AngleCategoryPageState();
+  State<FuelCategoryPage> createState() => _TorqueCategoryPageState();
 }
 
-class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
-  String firstIntialDropDownValue = 'celsius';
-  String secondIntialDropDownValue = 'fahrenheit';
+class _TorqueCategoryPageState extends State<FuelCategoryPage> {
+  String firstIntialDropDownValue = 'km perliter';
+  String secondIntialDropDownValue = 'litersper100km';
 
   final firstDropDownValue = [
-    "celsius",
-    "fahrenheit",
-    "kelvin",
+    "km perliter",
+    "litersper100km",
   ];
 
   final secondDropDownValue = [
-    "celsius",
-    "fahrenheit",
-    "kelvin",
+    "km perliter",
+    "litersper100km",
   ];
 
   final firstTextControllerValue = TextEditingController();
@@ -53,20 +50,18 @@ class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
         MediaQuery.of(context).orientation == Orientation.portrait;
     var mobileSize = MediaQuery.of(context).size.shortestSide;
     final bool isMobile = mobileSize < 600;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const FittedBox(
-          fit: BoxFit.fitWidth,
-          child: Text(
-            "Temperature Unit Converter",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-            ),
+        title: const Text(
+          "Fuel Unit Converter",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
           ),
         ),
         elevation: 0.0,
@@ -118,7 +113,7 @@ class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                const AngleCategoryPage(),
+                                const FuelCategoryPage(),
                           ),
                         );
                       },
@@ -191,7 +186,6 @@ class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
                           fontSize: 15.0,
                         ),
                       ),
-                      tileColor: Colors.purple.shade100,
                       onTap: () {
                         Navigator.of(context).pop();
                         Navigator.of(context).push(
@@ -374,6 +368,7 @@ class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
                           fontSize: 15.0,
                         ),
                       ),
+                      tileColor: Colors.purple.shade100,
                       onTap: () {
                         Navigator.of(context).pop();
                         Navigator.of(context).push(
@@ -442,173 +437,171 @@ class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
             )
           : null,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: SizedBox(
-            width: deviceWidth,
-            height: newDeviceHeight,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: isPortrait
-                      ? newDeviceHeight * 0.05
-                      : newDeviceHeight * 0.02,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(
-                      width: isMobile ? deviceWidth * 0.50 : deviceWidth * 0.30,
-                      child: TextFormField(
-                        controller: firstTextControllerValue,
-                        style: const TextStyle(
-                          fontSize: 25,
+        child: SizedBox(
+          width: deviceWidth,
+          height: newDeviceHeight,
+          child: Column(
+            children: [
+              SizedBox(
+                height: isPortrait
+                    ? newDeviceHeight * 0.05
+                    : newDeviceHeight * 0.02,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    width: isMobile ? deviceWidth * 0.50 : deviceWidth * 0.30,
+                    child: TextFormField(
+                      controller: firstTextControllerValue,
+                      style: const TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                      ),
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        hintText: "0",
+                        hintStyle: TextStyle(
+                          fontSize: isMobile ? 25 : 30,
                           fontWeight: FontWeight.w300,
                           color: Colors.black,
                         ),
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          hintText: "0",
-                          hintStyle: TextStyle(
-                            fontSize: isMobile ? 25 : 30,
-                            fontWeight: FontWeight.w300,
-                            color: Colors.black,
-                          ),
-                        ),
                       ),
-                    ),
-                    DropdownButton(
-                      value: firstIntialDropDownValue,
-                      icon: const Icon(Icons.keyboard_arrow_down),
-                      items: firstDropDownValue.map(
-                        (String items) {
-                          return DropdownMenuItem(
-                            value: items,
-                            child: Text(
-                              items,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: isMobile ? 15 : 20,
-                              ),
-                            ),
-                          );
-                        },
-                      ).toList(),
-                      onChanged: (String? newValue) {
-                        setState(
-                          () {
-                            firstIntialDropDownValue = newValue!;
-                          },
-                        );
-                      },
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: isPortrait
-                      ? isMobile
-                          ? newDeviceHeight * 0.40
-                          : newDeviceHeight * 0.40
-                      : isMobile
-                          ? newDeviceHeight * 0.15
-                          : newDeviceHeight * 0.40,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(
-                        Icons.arrow_upward,
-                        size: 35.5,
-                        color: Colors.black,
-                      ),
-                      Icon(
-                        Icons.arrow_downward,
-                        size: 35.5,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(
-                      width: isMobile ? deviceWidth * 0.50 : deviceWidth * 0.30,
-                      child: TextFormField(
-                        controller: secondTextControllerValue,
-                        style: const TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.black,
-                        ),
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          hintText: "0",
-                          hintStyle: TextStyle(
-                            fontSize: isMobile ? 25 : 30,
-                            fontWeight: FontWeight.w300,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                    DropdownButton(
-                      value: secondIntialDropDownValue,
-                      icon: const Icon(Icons.keyboard_arrow_down),
-                      items: secondDropDownValue.map(
-                        (String items) {
-                          return DropdownMenuItem(
-                            value: items,
-                            child: Text(
-                              items,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: isMobile ? 15 : 20,
-                              ),
-                            ),
-                          );
-                        },
-                      ).toList(),
-                      onChanged: (String? newValue) {
-                        setState(
-                          () {
-                            secondIntialDropDownValue = newValue!;
-                          },
-                        );
-                      },
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: isPortrait
-                      ? newDeviceHeight * 0.05
-                      : newDeviceHeight * 0.05,
-                ),
-                OutlinedButton(
-                  onPressed: () {
-                    convertData();
-                  },
-                  style: OutlinedButton.styleFrom(
-                    shape: const StadiumBorder(),
-                    side: BorderSide(
-                      width: 1.5,
-                      color: Colors.black.withOpacity(
-                        0.5,
-                      ),
-                    ),
-                    padding: const EdgeInsets.only(
-                      left: 50.0,
-                      right: 50.0,
                     ),
                   ),
-                  child: const Text(
-                    "Convert",
-                    style: TextStyle(
-                      fontSize: 20.0,
+                  DropdownButton(
+                    value: firstIntialDropDownValue,
+                    icon: const Icon(Icons.keyboard_arrow_down),
+                    items: firstDropDownValue.map(
+                      (String items) {
+                        return DropdownMenuItem(
+                          value: items,
+                          child: Text(
+                            items,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: isMobile ? 15 : 20,
+                            ),
+                          ),
+                        );
+                      },
+                    ).toList(),
+                    onChanged: (String? newValue) {
+                      setState(
+                        () {
+                          firstIntialDropDownValue = newValue!;
+                        },
+                      );
+                    },
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: isPortrait
+                    ? isMobile
+                        ? newDeviceHeight * 0.40
+                        : newDeviceHeight * 0.40
+                    : isMobile
+                        ? newDeviceHeight * 0.15
+                        : newDeviceHeight * 0.40,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(
+                      Icons.arrow_upward,
+                      size: 25.5,
                       color: Colors.black,
                     ),
+                    Icon(
+                      Icons.arrow_downward,
+                      size: 25.5,
+                      color: Colors.black,
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    width: isMobile ? deviceWidth * 0.50 : deviceWidth * 0.30,
+                    child: TextFormField(
+                      controller: secondTextControllerValue,
+                      style: const TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                      ),
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        hintText: "0",
+                        hintStyle: TextStyle(
+                          fontSize: isMobile ? 25 : 30,
+                          fontWeight: FontWeight.w300,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                  DropdownButton(
+                    value: secondIntialDropDownValue,
+                    icon: const Icon(Icons.keyboard_arrow_down),
+                    items: secondDropDownValue.map(
+                      (String items) {
+                        return DropdownMenuItem(
+                          value: items,
+                          child: Text(
+                            items,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: isMobile ? 15 : 20,
+                            ),
+                          ),
+                        );
+                      },
+                    ).toList(),
+                    onChanged: (String? newValue) {
+                      setState(
+                        () {
+                          secondIntialDropDownValue = newValue!;
+                        },
+                      );
+                    },
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: isPortrait
+                    ? newDeviceHeight * 0.05
+                    : newDeviceHeight * 0.05,
+              ),
+              OutlinedButton(
+                onPressed: () {
+                  convertData();
+                },
+                style: OutlinedButton.styleFrom(
+                  shape: const StadiumBorder(),
+                  side: BorderSide(
+                    width: 1.5,
+                    color: Colors.black.withOpacity(
+                      0.5,
+                    ),
+                  ),
+                  padding: const EdgeInsets.only(
+                    left: 50.0,
+                    right: 50.0,
                   ),
                 ),
-              ],
-            ),
+                child: const Text(
+                  "Convert",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -622,12 +615,11 @@ class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
         "Alert",
         "Please provide a value",
       );
-    } else if (firstTextControllerValue.text == "0.0" ||
-        firstTextControllerValue.text == "0") {
+    } else if (double.parse(firstTextControllerValue.text) < 0) {
       alertBoxWidget(
         context,
         "Alert",
-        "Zero not allowed",
+        "Negative values not allow",
       );
     } else if (firstIntialDropDownValue == secondIntialDropDownValue) {
       alertBoxWidget(
@@ -638,7 +630,7 @@ class _AngleCategoryPageState extends State<TemperatureCategoryPage> {
     } else {
       setState(
         () {
-          secondTextControllerValue.text = temperatureUnitConverte(
+          secondTextControllerValue.text = fuelUnitConverte(
             firstIntialDropDownValue,
             secondIntialDropDownValue,
             firstTextControllerValue,
