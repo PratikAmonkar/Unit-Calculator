@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:unit_converter/functions/length_unit_converter.dart';
 import 'package:unit_converter/screens/common/binary_coode_category_page.dart';
+import 'package:unit_converter/screens/common/electric_current_category.dart';
 import 'package:unit_converter/screens/common/force_category_page.dart';
 import 'package:unit_converter/screens/common/frequency_category_page.dart';
 import 'package:unit_converter/screens/common/gas_pump_category_page.dart';
@@ -487,6 +488,32 @@ class _AngleCategoryPageState extends State<LengthCategoryPage> {
                           MaterialPageRoute(
                             builder: (BuildContext context) =>
                                 const FrequencyCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                   Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/electric-current.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Electric Current",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const ElectricCurrentCategoryPage(),
                           ),
                         );
                       },

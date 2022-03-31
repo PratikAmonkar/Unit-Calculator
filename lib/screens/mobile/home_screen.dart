@@ -5,6 +5,7 @@ import 'package:unit_converter/screens/common/angle_category_page.dart';
 import 'package:unit_converter/screens/common/area_category_page.dart';
 import 'package:unit_converter/screens/common/binary_coode_category_page.dart';
 import 'package:unit_converter/screens/common/data_category_page.dart';
+import 'package:unit_converter/screens/common/electric_current_category.dart';
 import 'package:unit_converter/screens/common/force_category_page.dart';
 import 'package:unit_converter/screens/common/frequency_category_page.dart';
 import 'package:unit_converter/screens/common/gas_pump_category_page.dart';
@@ -82,9 +83,13 @@ class _CategoryPageState extends State<CategoryPage> {
       "images/speedometer.png",
       "Speed",
     ),
-       CategoryImage(
+    CategoryImage(
       "images/frequency.png",
       "Frequency",
+    ),
+    CategoryImage(
+      "images/electric-current.png",
+      "Electric Current",
     ),
   ];
 
@@ -213,6 +218,12 @@ class _CategoryPageState extends State<CategoryPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const FrequencyCategoryPage(),
+                  ),
+                );
+              } else if (index == 15) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ElectricCurrentCategoryPage(),
                   ),
                 );
               }
