@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:unit_converter/functions/volume_unit_converter.dart';
+import 'package:unit_converter/screens/common/frequency_category_page.dart';
 import 'package:unit_converter/screens/common/speed_category_page.dart';
 import 'package:unit_converter/widgets/alertbox_widget.dart';
 
@@ -449,6 +450,32 @@ class _AngleCategoryPageState extends State<VolumeCategoryPage> {
                           MaterialPageRoute(
                             builder: (BuildContext context) =>
                                 const SpeedCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/frequency.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Frequency",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const FrequencyCategoryPage(),
                           ),
                         );
                       },

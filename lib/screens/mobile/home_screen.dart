@@ -6,6 +6,7 @@ import 'package:unit_converter/screens/common/area_category_page.dart';
 import 'package:unit_converter/screens/common/binary_coode_category_page.dart';
 import 'package:unit_converter/screens/common/data_category_page.dart';
 import 'package:unit_converter/screens/common/force_category_page.dart';
+import 'package:unit_converter/screens/common/frequency_category_page.dart';
 import 'package:unit_converter/screens/common/gas_pump_category_page.dart';
 import 'package:unit_converter/screens/common/length_category_page.dart';
 import 'package:unit_converter/screens/common/mass_category_page.dart';
@@ -80,6 +81,10 @@ class _CategoryPageState extends State<CategoryPage> {
     CategoryImage(
       "images/speedometer.png",
       "Speed",
+    ),
+       CategoryImage(
+      "images/frequency.png",
+      "Frequency",
     ),
   ];
 
@@ -202,6 +207,12 @@ class _CategoryPageState extends State<CategoryPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const SpeedCategoryPage(),
+                  ),
+                );
+              } else if (index == 14) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const FrequencyCategoryPage(),
                   ),
                 );
               }

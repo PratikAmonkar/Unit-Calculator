@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:unit_converter/functions/time_unit_convert.dart';
 import 'package:unit_converter/screens/common/binary_coode_category_page.dart';
 import 'package:unit_converter/screens/common/force_category_page.dart';
+import 'package:unit_converter/screens/common/frequency_category_page.dart';
 import 'package:unit_converter/screens/common/gas_pump_category_page.dart';
 import 'package:unit_converter/screens/common/shoe_size_category_page.dart';
 import 'package:unit_converter/screens/common/speed_category_page.dart';
@@ -456,6 +457,32 @@ class _AngleCategoryPageState extends State<TimeCategoryPage> {
                           MaterialPageRoute(
                             builder: (BuildContext context) =>
                                 const SpeedCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                      Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/frequency.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Frequency",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const FrequencyCategoryPage(),
                           ),
                         );
                       },
