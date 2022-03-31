@@ -10,6 +10,7 @@ import 'package:unit_converter/screens/common/gas_pump_category_page.dart';
 import 'package:unit_converter/screens/common/length_category_page.dart';
 import 'package:unit_converter/screens/common/mass_category_page.dart';
 import 'package:unit_converter/screens/common/shoe_size_category_page.dart';
+import 'package:unit_converter/screens/common/speed_category_page.dart';
 import 'package:unit_converter/screens/common/temperature_category_page.dart';
 import 'package:unit_converter/screens/common/time_category_page.dart';
 import 'package:unit_converter/screens/common/torque_category_page.dart';
@@ -75,6 +76,10 @@ class _CategoryPageState extends State<CategoryPage> {
     CategoryImage(
       "images/torque-wrench.png",
       "Torque",
+    ),
+    CategoryImage(
+      "images/speedometer.png",
+      "Speed",
     ),
   ];
 
@@ -191,6 +196,12 @@ class _CategoryPageState extends State<CategoryPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const TorqueCategoryPage(),
+                  ),
+                );
+              } else if (index == 13) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const SpeedCategoryPage(),
                   ),
                 );
               }

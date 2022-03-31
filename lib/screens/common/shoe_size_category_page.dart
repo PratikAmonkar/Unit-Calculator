@@ -4,6 +4,7 @@ import 'package:unit_converter/functions/shoe_size_unit_category.dart';
 import 'package:unit_converter/screens/common/binary_coode_category_page.dart';
 import 'package:unit_converter/screens/common/force_category_page.dart';
 import 'package:unit_converter/screens/common/gas_pump_category_page.dart';
+import 'package:unit_converter/screens/common/speed_category_page.dart';
 import 'package:unit_converter/screens/common/torque_category_page.dart';
 import 'package:unit_converter/widgets/alertbox_widget.dart';
 
@@ -432,6 +433,32 @@ class _AngleCategoryPageState extends State<ShowSizeCategoryPage> {
                           MaterialPageRoute(
                             builder: (BuildContext context) =>
                                 const TorqueCategoryPage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10.0,
+                    ),
+                    child: ListTile(
+                      leading: Image.asset(
+                        "images/speedometer.png",
+                        height: 40.0,
+                      ),
+                      title: const Text(
+                        "Speed",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const SpeedCategoryPage(),
                           ),
                         );
                       },

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:unit_converter/functions/speed_unit_convert.dart';
 import 'package:unit_converter/screens/common/binary_coode_category_page.dart';
 import 'package:unit_converter/screens/common/force_category_page.dart';
 import 'package:unit_converter/screens/common/gas_pump_category_page.dart';
 import 'package:unit_converter/screens/common/shoe_size_category_page.dart';
-import 'package:unit_converter/screens/common/speed_category_page.dart';
 import 'package:unit_converter/screens/common/torque_category_page.dart';
 import 'package:unit_converter/widgets/alertbox_widget.dart';
-import 'package:unit_converter/functions/angle_unit_convert.dart';
 
 import 'area_category_page.dart';
 import 'data_category_page.dart';
@@ -17,25 +16,25 @@ import 'temperature_category_page.dart';
 import 'time_category_page.dart';
 import 'volume_category_page.dart';
 
-class AngleCategoryPage extends StatefulWidget {
-  const AngleCategoryPage({Key? key}) : super(key: key);
+class SpeedCategoryPage extends StatefulWidget {
+  const SpeedCategoryPage({Key? key}) : super(key: key);
 
   @override
-  State<AngleCategoryPage> createState() => _AngleCategoryPageState();
+  State<SpeedCategoryPage> createState() => _SpeedCategoryPageState();
 }
 
-class _AngleCategoryPageState extends State<AngleCategoryPage> {
-  String firstIntialDropDownValue = 'degree';
-  String secondIntialDropDownValue = 'radians';
+class _SpeedCategoryPageState extends State<SpeedCategoryPage> {
+  String firstIntialDropDownValue = 'meter/sec';
+  String secondIntialDropDownValue = 'kilometer/hr';
 
   final firstDropDownValue = [
-    "degree",
-    "radians",
+    "meter/sec",
+    "kilometer/hr",
   ];
 
   final secondDropDownValue = [
-    "degree",
-    "radians",
+    "meter/sec",
+    "kilometer/hr",
   ];
 
   final firstTextControllerValue = TextEditingController();
@@ -59,7 +58,7 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: const Text(
-          "Angle Unit Converter",
+          "Speed Unit Converter",
           style: TextStyle(
             color: Colors.black,
             fontSize: 20.0,
@@ -110,13 +109,12 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
                           fontSize: 15.0,
                         ),
                       ),
-                      tileColor: Colors.purple.shade100,
                       onTap: () {
                         Navigator.of(context).pop();
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                const AngleCategoryPage(),
+                                const SpeedCategoryPage(),
                           ),
                         );
                       },
@@ -449,6 +447,7 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
                           fontSize: 15.0,
                         ),
                       ),
+                      tileColor: Colors.purple.shade100,
                       onTap: () {
                         Navigator.of(context).pop();
                         Navigator.of(context).push(
@@ -658,7 +657,7 @@ class _AngleCategoryPageState extends State<AngleCategoryPage> {
     } else {
       setState(
         () {
-          secondTextControllerValue.text = angleUnitConverte(
+          secondTextControllerValue.text = speedUnitConverte(
             firstIntialDropDownValue,
             secondIntialDropDownValue,
             firstTextControllerValue,
